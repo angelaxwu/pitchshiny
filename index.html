@@ -1,145 +1,83 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=1024" />
-   <meta name="apple-mobile-web-app-capable" content="yes" />
-   <title>Popular Websites in Global Attention Economy</title>
-   <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
-   <meta name="author" content="AXW" />
-   <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
-   <link href="libraries/frameworks/impressjs/css/impress-demo.css" rel="stylesheet" />
-   <link rel="shortcut icon" href="libraries/frameworks/impressjs/favicon.png" />
-   <link rel="apple-touch-icon" href="libraries/frameworks/impressjs/apple-touch-icon.png" />
-   <link href="libraries/highlighters/highlight.js/css/tomorrow.css" rel="stylesheet" />   <link rel="stylesheet" href = "assets/css/ribbons.css">
-
+	<meta charset='utf-8'>
+	<title>Popular Websites in Global Attention Economy</title>
+	<meta name="description" content="Popular Websites in Global Attention Economy">
+	<meta name="author" content="AXW">
+	<meta name="generator" content="slidify" />
+	
+	<!-- LOAD STYLE SHEETS -->
+	<link rel="stylesheet" href="libraries/frameworks/html5slides/default/styles.css">
+	<link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />  <link rel="stylesheet" href = "assets/css/ribbons.css">
+  
 </head>
-<body class="impress-not-supported">
-  <div class="fallback-message">
-    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are   
-      presented with a simplified version of this presentation.</p>
-    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> 
-      browser.</p>
-  </div>
-  <div id="impress">
-    
-    <div id="slide-1" class="step " 
-  data-x="" data-y=""  
-   
-    
-    
-   >
- 
- 
-</div>
-<div id="Title" class="step " 
-  data-x="900," data-y=""  
-   
-    
-    
-   >
- 
- <p><font color=purple><strong>Popular Websites in Global Attention Economy</strong> <br></font>
-As more and more people get online, how has the status of different types of websites changed in the attention economy?<br>
+<body style='display: none'>
+	<section class='slides layout-regular template-regular'>
+     <article class="" id="slide-1" style="background:;">
+  <h3><font color=purple><strong>Popular Websites in Global Attention Economy</strong> <br></font></h3>
+  <p>As more and more people get online, how has the status of different types of websites changed in the attention economy?<br>
 <font family=verdana size=4px><a href="https://angelaxwu.shinyapps.io/9Products">Find the App here!</a></font></p>
 
-</div>
-<div id="slide-3" class="step slide" 
-  data-x="600" data-y="600"  
-    data-rotate="300" 
-    
-    
-   >
- 
- <p><font family=verdana>Two Status Measures: <br><br></font>
-<font size=5px></p>
+</article>
 
-<ol>
-<li><p><strong>Diversity of Userbase</strong>: Internet users come from all over the world. Some websites&#39; users frequent a wider range of other websites than others. For example, The userbase of e-map service is a far more diverse than that of an online dissertation repository.<br><br></p></li>
-<li><p><strong>Centrality in User Attention</strong>: Some websites are more central in the attention economy than others because whatever other sites different users also visit online, a large amount of users tend to use these websites. For example, Google is high on Centrality score as people of various online browing habits tend to use Google habitually.<br> </p></li>
-</ol>
+<article class="" id="slide-2" style="background:;">
+  <h3>Two Status Measures:</h3>
+  <p><font size=5px></p>
+
+<p><strong>Diversity of Userbase</strong>: Internet users come from all over the world. Some websites&#39; users frequent a wider range of other websites than others. For example, The userbase of e-map service is a far more diverse than that of an online dissertation repository.</p>
+
+<p><strong>Centrality in User Attention</strong>: Some websites are more central in the attention economy than others because whatever other sites different users also visit online, a large amount of users tend to use these websites. For example, Google is high on Centrality score as people of various online browing habits tend to use Google habitually.</p>
 
 <p></font></p>
 
-</div>
-<div id="slide-4" class="step slide" 
-  data-x="1300" data-y="600"  
-    data-rotate="300" 
-    
-    
-   >
- 
- <p><strong>Tab One</strong> Measure Scores: <br><br> <font size=4px>
-This tab produces a scatter plot is based on the scores (of your chosen measure) of the 1000 most popular websites of a given year. The scores are ranked from high to low. You could view only websites belonging to certain basic categories. Sample code:
-<font size=2px></p>
+</article>
 
-<pre><code class="r">require(ggplot2)
-## first generate the data (this is NOT the real dataset being used in the app)
-score &lt;-rnorm(1000) # generate a random series as the scores of the 1000 websites
-score &lt;- score[order(-score)] # generate rankngs accordingly
-dat &lt;- data.frame(cbind(score, rank=1:1000))
-dat_onecat &lt;- dat[sample(1:1000,100,replace=F),] #generate data of one &quot;category&quot; (of 100 websites in this case)
+<article class="" id="slide-3" style="background:;">
+  <h3><font color=purple>Tab One</font> Measure Scores:  <font size=3px></h3>
+  <p>This tab produces a scatter plot is based on the scores (of your chosen measure) of the 1000 most popular websites of a given year. The scores are ranked from high to low. You could view only websites belonging to certain basic categories. Sample code:</font></p>
 
+<pre><code class="r">require(ggplot2) ## this is NOT the real dataset being used in the app
+score &lt;-rnorm(1000); score &lt;- score[order(-score)] # randomly generate website scores 
+dat &lt;- data.frame(cbind(score, rank=1:1000)); 
+dat_onecat &lt;- dat[sample(1:1000,100,replace=F),] #generate data of one website type 
 ggplot(dat_onecat,aes(x=rank, y=score)) + 
         geom_point(size=2) + 
-        ggtitle(paste(&quot;Scatterplot of Measure Scores of Websites belong to X category (Year XXXX)&quot;))
+        ggtitle(paste(&quot;Scatterplot of Measure Scores of Websites of Type X&quot;))
 </code></pre>
 
-<p><img src="assets/fig/simple-plot-1.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" />
-</font></p>
+<p><img src="assets/fig/simple-plot-1.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" /></p>
 
-</div>
-<div id="slide-5" class="step slide" 
-  data-x="2000" data-y="600"  
-    data-rotate="300" 
-    
-    
-   >
- 
- <p><strong>Tab Two</strong> Ranking Distribution: <br><font size=3px>
-This tab generates histograms based on the rankings of scores (of a given measure) of the 1000 most popular websites of a given year. Due to how these measures are calculated, when we want to have a comparative view, it is more useful to examine their rankings rather than their absolute values. The distribution of rankings of a particular website category informs us of the internal diversity of this category. Sample code:
-<font size=2px></p>
+</article>
 
-<pre><code class="r">require(ggplot2)
-## first generate the data (this is NOT the real dataset being used in the app)
-score &lt;-rnorm(1000) # generate a random series as the scores of the 1000 websites
-score &lt;- score[order(-score)] # generate rankngs accordingly
-dat &lt;- data.frame(cbind(score, rank=1:1000))
-dat_onecat &lt;- dat[sample(1:1000,100,replace=F),] #generate data of one &quot;category&quot; (of 100 websites in this case)
+<article class="" id="slide-4" style="background:;">
+  <h3><font color=purple>Tab Two</font> Ranking Distribution:  <font size=3px></h3>
+  <p>This tab generates histograms based on the rankings of scores (of a given measure) of the 1000 most popular websites of a given year. The distribution of rankings of a particular website category informs us of the internal diversity of this category. Sample code: </font></p>
 
+<pre><code class="r">require(ggplot2) ## this is NOT the real dataset being used in the app
+score &lt;-rnorm(1000); score &lt;- score[order(-score)] # randomly generate website scores 
+dat &lt;- data.frame(cbind(score, rank=1:1000)); 
+dat_onecat &lt;- dat[sample(1:1000,100,replace=F),] #generate data of one website type 
 ggplot(dat_onecat, aes(x=rank)) + 
         geom_histogram(binwidth = 50) + 
-        ggtitle(paste(&quot;Histogram of Rankings of One Website Category (Year XXX)&quot;))
+        ggtitle(paste(&quot;Histogram of Rankings of One Website Type (Year XXX)&quot;))
 </code></pre>
 
-<p><img src="assets/fig/simple-plot2-1.png" title="plot of chunk simple-plot2" alt="plot of chunk simple-plot2" style="display: block; margin: auto;" />
-</font></p>
+<p><img src="assets/fig/simple-plot2-1.png" title="plot of chunk simple-plot2" alt="plot of chunk simple-plot2" style="display: block; margin: auto;" /></p>
 
-</div>
-<div id="slide-6" class="step slide" 
-  data-x="2700" data-y="600"  
-    data-rotate="300" 
-    
-    
-   >
- 
- <p><font size=6px><strong>Tab Three</strong> Website Types over Time: </font><br><br><font size=5px>
-This tab gives a simple line spot based on the average rankings (of a given measure) of different website types over time. Due to how these measures are calculated, when we want to have a comparative view, it is more useful to examine their rankings rather than their absolute values. <br><br>
+</article>
+
+<article class="" id="slide-5" style="background:;">
+  <h3><font color=purple>Tab Three</font> Website Types over Time: <font size=3px></h3>
+  <p>This tab gives a simple line plot based on the average rankings (of a given measure) of different website types over time. Due to how these measures are calculated, when we want to have a comparative view, it is more useful to examine their rankings rather than their absolute values. <br>
 We need to be careful, though, to rely on the averages to discern how the status of different types of websites changed in the attention economy, because each category can be internally heterogeneous (see the &#39;Ranking Distribution&#39; tab).</font> <br>
-<font size=3px>(No sample code is presented for this tab.) </font>
-</font></p>
+<font size=3px>(No sample code is presented for this tab.) </font></p>
 
-</div>
-<div id="slide-7" class="step slide" 
-  data-x="3400" data-y="800"  
-    data-rotate="280" 
-    
-    
-   >
- 
- <p><font size=7px color=purple>More on Data / Measures</font><br><br><font size=4px></p>
+</article>
 
-<ol>
+<article class="" id="slide-6" style="background:;">
+  <h3><font color=purple>More on Data / Measures</font> <font size=3px></h3>
+  <ol>
 <li>This app is an analytical summary of how people browse popular websites over time. <br><br></li>
 <li>The websites under consideration are the world&#39;s most popular 1000 websites at the year 2009, 2011, and 2013, respectively. <br><br></li>
 <li>The dataset contains each website&#39;s basic categories, as well as how each site is accessed by Internet users around the world. <br><br></li>
@@ -150,31 +88,15 @@ We need to be careful, though, to rely on the averages to discern how the status
 <p><font family=verdana size=4px><a href="https://angelaxwu.shinyapps.io/9Products">Find the App here!</a></font>
 </font></p>
 
-</div>
- 
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
-    </div>
+</article>
 
-  </div>
-
-  <div class="hint">
-    <p>Use a spacebar or arrow keys to navigate</p>
-  </div>
-  
-  <div style="position: fixed; bottom: 10px; left: 10px; pointer-events: auto;">
-      <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-  </div>
-  </body>
- <script>
-  if ("ontouchstart" in document.documentElement) { 
-    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
-  }
- </script>
- <script src="libraries/frameworks/impressjs/js/impress.js"></script>
- <script>impress().init();</script>
- <!-- LOAD HIGHLIGHTER JS FILES -->
- <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
- <script>hljs.initHighlightingOnLoad();</script>
- <!-- DONE LOADING HIGHLIGHTER JS FILES -->
-  
- </html>
+  </section>
+</body>
+  <!-- LOAD JAVASCRIPTS  -->
+	<script src='libraries/frameworks/html5slides/default/slides.js'></script>
+	<!-- LOAD HIGHLIGHTER JS FILES -->
+	<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+	 
+	</html>
